@@ -1,0 +1,50 @@
+//
+//  微博客户端.pch
+//  微博客户端
+//
+//  Created by 庄丹丹 on 2016/10/28.
+//  Copyright © 2016年 庄丹丹. All rights reserved.
+//
+
+#ifndef ______pch
+#define ______pch
+
+#import "UIView+WBFrame.h"
+#import "UIImage+WBImage.h"
+
+#define WBKeyWindow [UIApplication sharedApplication].keyWindow
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+// ...表示宏定义的可变参数
+// __VA_ARGS__:表示函数里面的可变参数
+#ifdef DEBUG // 调试
+
+#define WBLog(...) NSLog(__VA_ARGS__)
+
+#else // 发布
+
+#define WBLog(...)
+
+#endif
+
+#define WBColor(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1]
+
+/*        cell            */
+#define WBStatusCellMargin 10
+#define WBNameFont [UIFont systemFontOfSize:13]
+#define WBTimeFont [UIFont systemFontOfSize:12]
+#define WBSourceFont WBTimeFont
+#define WBTextFont [UIFont systemFontOfSize:15]
+#define WBScreenW [UIScreen mainScreen].bounds.size.width
+
+/*setting*/
+#define WBUserDefaults [NSUserDefaults standardUserDefaults]
+#define WBFontSizeKey @"字号大小"
+
+#define WBFontSizeChangeNote @"fontSiziChange"
+
+#define WBSelDownloadKey @"selDownloadKey"
+#define WBSelUploadKey @"selDownloadKey"
+
+#endif /* ______pch */
